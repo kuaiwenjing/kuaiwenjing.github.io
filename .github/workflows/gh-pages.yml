@@ -10,31 +10,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ① 拉源码
+      # ① 拉取源码
       - uses: actions/checkout@v4
 
-      # ② 安装 Hugo extended 0.120.4
+      # ② 安装最新 Hugo extended（0.147.0+）
       - uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.120.4'
+          hugo-version: '0.147.0'
           extended: true
 
-      # ③ 安装 Node（Toha 需要 PostCSS/Sass 等）
+      # ③ 安装 Node —— Toha v4 需 PostCSS
       - uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      # ④ 生成 package.hugo.json 并拉取前端依赖
-      - name: Prepare node modules
+      # ④ 下载 Go / npm 依赖
+      - name: Prepare modules & node deps
         run: |
-          hugo mod npm pack          # 生成 package.hugo.json
-          npm ci                     # 安装依赖
+          hugo mod tidy            # 拉取 Hugo Modules
+          hugo mod npm pack        # 生成 package.hugo.json
+          npm ci                   # 安装前端依赖
 
-      # ⑤ 构建站点
+      # ⑤ 生成静态站点
       - name: Build site
         run: hugo --minify
 
-      # ⑥ 部署到 gh-pages
+      # ⑥ 发布到 gh-pages 分支
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
