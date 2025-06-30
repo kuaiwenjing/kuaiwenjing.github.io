@@ -42,6 +42,9 @@ enableEmoji: true
 # 站点参数
 # ------------------------------------------------------------
 params:
+
+  keywords: "Wenjing Kuai, kuaiwenjing, environmental economics, green jobs"
+
   # -------- Git 信息（用于 “Improve This Page” 按钮） --------
   gitRepo: https://github.com/kuaiwenjing/kuaiwenjing.github.io
   gitBranch: main

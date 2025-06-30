@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kuaiwenjing.github.io/sitemap.xml
