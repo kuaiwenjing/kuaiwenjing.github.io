@@ -9,7 +9,7 @@
 {{ $name := cond $author.nickname $author.nickname $author.name }}
 
 {{/* ---------- 背景与头像 ---------- */}}
-{{ $background     := site.Params.background     | default "/images/default-background.jpg" }}
+{{ $background     := site.Params.background     | default "images/site/background.jpg" }}
 {{ $darkBackground := site.Params.darkBackground | default $background }}
 
 {{ $bg     := resources.Get $background }}
