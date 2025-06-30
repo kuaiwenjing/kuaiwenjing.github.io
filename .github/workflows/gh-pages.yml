@@ -2,30 +2,32 @@ name: deploy-to-gh-pages
 
 on:
   push:
-    branches: [main]          # 只要你向 main 推送就触发
-  workflow_dispatch:          # 也可以手动点 Run
+    branches: [main]          # 只要 main 分支有提交就自动运行
+  workflow_dispatch:          # 也允许在 Actions 页面手动触发
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # ① 拉取源码
+      # 1) 检出仓库源码
       - uses: actions/checkout@v4
 
-      # ② 安装 Hugo（extended=true）
+      # 2) 安装 Hugo（extended 版本）
       - uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.118.2'
+          hugo-version: '0.120.4'   # 兼容 Toha v4.9+
           extended: true
 
-      # ③ 生成静态文件到 /public
-      - run: hugo --minify
+      # 3) 生成静态文件到 ./public
+      - name: Build site
+        run: hugo --minify
 
-      # ④ 发布到 gh-pages 分支
-      - uses: peaceiris/actions-gh-pages@v3
+      # 4) 发布 ./public 到 gh-pages 分支
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public          # 生成目录
-          publish_branch: gh-pages       # 发布分支
-          keep_files: true               # ← 这里放在 with 里
+          publish_dir: ./public      # Hugo 输出目录
+          publish_branch: gh-pages   # 发布到 gh-pages
+          keep_files: true           # 保留 main 分支源码
