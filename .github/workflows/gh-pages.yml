@@ -2,32 +2,43 @@ name: deploy-to-gh-pages
 
 on:
   push:
-    branches: [main]          # 只要 main 分支有提交就自动运行
-  workflow_dispatch:          # 也允许在 Actions 页面手动触发
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1) 检出仓库源码
+      # ① 拉源码
       - uses: actions/checkout@v4
 
-      # 2) 安装 Hugo（extended 版本）
+      # ② 安装 Hugo extended 0.120.4
       - uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.120.4'   # 兼容 Toha v4.9+
+          hugo-version: '0.120.4'
           extended: true
 
-      # 3) 生成静态文件到 ./public
+      # ③ 安装 Node（Toha 需要 PostCSS/Sass 等）
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # ④ 生成 package.hugo.json 并拉取前端依赖
+      - name: Prepare node modules
+        run: |
+          hugo mod npm pack          # 生成 package.hugo.json
+          npm ci                     # 安装依赖
+
+      # ⑤ 构建站点
       - name: Build site
         run: hugo --minify
 
-      # 4) 发布 ./public 到 gh-pages 分支
+      # ⑥ 部署到 gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public      # Hugo 输出目录
-          publish_branch: gh-pages   # 发布到 gh-pages
-          keep_files: true           # 保留 main 分支源码
+          publish_dir: ./public
+          publish_branch: gh-pages
+          keep_files: true
