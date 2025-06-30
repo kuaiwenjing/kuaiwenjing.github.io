@@ -1,0 +1,36 @@
+{{- $section := .section -}}
+<section id="{{ $section.id }}" class="py-12">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-semibold mb-6">{{ $section.name }}</h2>
+    <div class="prose max-w-none">
+      {{ with .Params.designation }}<p><strong>{{ . }}</strong></p>{{ end }}
+      {{ with .Params.company }}
+        <p><a href="{{ .url }}" class="text-blue-600">{{ .name }}</a></p>
+      {{ end }}
+      <p>{{ .Params.summary | markdownify }}</p>
+      <ul class="flex space-x-4 my-4">
+        {{ range .Params.socialLinks }}
+          <li><a href="{{ .url }}" title="{{ .name }}" class="text-xl"><i class="{{ .icon }}"></i></a></li>
+        {{ end }}
+      </ul>
+      <ul>
+        {{ range .Params.resourceLinks }}
+          <li><a href="{{ .url }}" class="text-blue-600">{{ .title }}</a></li>
+        {{ end }}
+      </ul>
+      {{ if .Params.badges }}
+        <div class="flex space-x-4 mt-4">
+          {{ range .Params.badges }}
+            <div class="text-center">
+              {{ if eq .type "soft-skill-indicator" }}
+                <div>{{ .name }}: {{ .percentage }}%</div>
+              {{ else }}
+                <a href="{{ .url }}"><img src="{{ .badge }}" alt="{{ .name }}" class="h-12"></a>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

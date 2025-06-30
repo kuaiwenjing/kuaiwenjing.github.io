@@ -1,0 +1,14 @@
+section:
+  name: 中文简介
+  id: about-zh
+  enable: true
+  weight: 6          # 放在 CV 之后
+  showOnNavbar: true
+  template: sections/about.html        # 复用同一模板
+
+summary: |
+  **蒯文婧**，经济学博士，湖南大学经济与管理学院助理教授。研究领域包括环境经济学、
+  劳动经济学与创新经济学，尤其关注绿色经济转型对劳动力市场的影响以及绿色就业与
+  绿色技能测度。在 *Journal of Environmental Economics and Management*、
+  *Applied Economics* 等国内外期刊发表多篇论文，主持/参与国家和省部级科研项目多项，
+  曾获湖南大学优秀班主任、本科毕业论文优秀指导教师等多项荣誉。

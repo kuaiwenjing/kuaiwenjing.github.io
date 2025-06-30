@@ -1,0 +1,12 @@
+# your-site/data/en/sections/cv.yaml
+section:
+  name: CV          # 在卡片和导航栏显示的标题
+  id: cv            # 必须与 Home 中 href="#cv" 一致
+  enable: true
+  weight: 60        # 越小越靠上；不与其他区块重复即可
+  showOnNavbar: true
+
+# 卡片里要展示的文件 / 链接
+resourceLinks:
+  - title: "Wenjing_Kuai_CV.pdf"
+    url: "files/Wenjing_Kuai_CV.pdf"

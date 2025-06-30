@@ -1,0 +1,12 @@
+section:
+  name: Working Papers
+  id: working-papers
+  enable: true
+  weight: 3          # 调整顺序用
+  showOnNavbar: true
+
+papers:
+  - title: "Estimating the Green Wage Premium"
+    authors: "Elliott, J.R. Robert; Kuai, Wenjing; Okubo, Toshihiro; Ozgen, Ceren"
+    status: "IZA Discussion Paper No. 17878"
+    link: "https://docs.iza.org/dp17878.pdf"

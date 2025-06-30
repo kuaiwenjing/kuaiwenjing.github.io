@@ -1,0 +1,18 @@
+/* 隐藏 Toha 主题链接和 Hugo 链接（带有这两个 id 的 <a> 标签）*/
+footer a#theme,
+footer a#hugo {
+  display: none !important;
+}
+
+/* 让版权栏独占整行并居中 */
+footer .row.text-start .col-md-4.text-center {
+  flex: 0 0 100% !important;          /* 宽度 100% */
+  max-width: 100% !important;
+  text-align: center !important;
+}
+
+/* 彻底隐藏 typing 动画容器和光标 */
+.typing-carousel,
+.ityped-cursor {
+  display: none !important;
+}

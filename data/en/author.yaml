@@ -1,21 +1,23 @@
-# some information about you
-name: "John Doe"
-nickname: "John"
-# greeting message before your name. it will default to "Hi! I am" if not provided
-greeting: "Hi, I am"
-image: "images/author/john.png"
-# give your some contact information. they will be used in the footer
-contactInfo:
-  email: "johndoe@example.com"
-  phone: "+0123456789"
-  github: johndoe
-  linkedin: johndoe
-  researchgate: john-doe
+# ---------------- 基本信息 ----------------
+name: "Wenjing Kuai"
+nickname: "Wenjing"
+greeting: "Hi, I'm"
+image: "images/author/avatar.png"        # 把头像放 static/images/author/avatar.png
 
-# some summary about what you do
+# ---------------- 联系方式（页脚显示） ----------------
+contactInfo:
+  email: kuaiwj@hnu.edu.cn
+  github: kuaiwenjing
+  google-scholar:
+    icon: google
+    url: https://scholar.google.com/citations?user=JMfkDnAAAAAJ
+    text: Scholar
+  # 若想加电话或地址，可继续补：
+  # phone: "+86 138-0000-0000"
+
+# ---------------- 个人简介摘要 ----------------
+# ---------------- 个人简介摘要（改成单行字符串） ----------------
 summary:
-  - I am a Developer
-  - I am a Devops
-  - I love servers
-  - I work on open-source projects
-  - I love to work with some fun projects
+  - "Assistant Professor, School of Economics & Trade, Hunan University"
+  - "PhD in Economics, University of Birmingham"
+  - "Research: environmental, labour & innovation economics; green jobs and skills"

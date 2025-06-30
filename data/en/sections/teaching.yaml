@@ -1,0 +1,19 @@
+section:
+  name: Teaching
+  id: teaching
+  enable: true
+  weight: 4           # Home=0, About=1, Publications=2, Working Papers=3, Teaching=4…
+  showOnNavbar: true
+
+courses:
+  - title: Microeconomics
+    semester: "2024 Spring"
+    link: ""                 # 若有课程主页或 PDF 大纲，请填写 URL
+
+  - title: Schools of Western Economic Thought
+    semester: "2024 Fall"
+    link: ""                 # 同上
+
+  - title: Academic Writing
+    semester: "2023 Fall"
+    link: ""

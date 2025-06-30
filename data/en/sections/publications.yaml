@@ -1,82 +1,36 @@
-# section information
 section:
   name: Publications
   id: publications
   enable: true
-  weight: 6
+  weight: 2          # About=1, Publications=2
   showOnNavbar: true
-  # Can optionally hide the title in sections
-  # hideTitle: true
 
-# filter buttons
-buttons:
-- name: All
-  filter: "all"
-- name: "Machine Learning"
-  filter: "machinelearning"
-- name: "Image Processing"
-  filter: "image-processing"
-- name: Security
-  filter: "security"
-
-# your publications
 publications:
-- title: An Example Paper on Machine Learning
-  publishedIn:
-    name: 2020 IEEE Region Symposium (TENSYMP)
-    date: 7 June 2020
-    url: https://example.com
-  authors:
-  - name: Dr. Madman
-    url: https://example.com
-  - name: Dr. Lessmad
-    url: https://example.com
-  - name: Dr. Moremad
-    url: https://example.com
-  - name: Dr. Goodman
-    url: https://example.com
-  paper:
-    summary: Voluptate in id id voluptate laboris. Minim mollit aliquip sit aliqua ut exercitation voluptate eiusmod consequat pariatur sunt enim veniam. Velit esse tempor laboris anim tempor officia. Magna non labore duis do esse sit do ipsum culpa. Officia consequat id non duis culpa dolor. Excepteur magna non nostrud cupidatat aute aliqua aliquip.
-    url: https://example.com
-  categories: ["machinelearning","image-processing"]
-  tags: ["Machine Learning", "Autonomous Driving", "Computer Vision"]
+  # ------------- 2025 -------------
+  - year: 2025
+    papers:
+      - title: "Research on Green Employment: Definition, Measurement, and Development"
+        authors: "Kuai, Wenjing; Mi, Yinxia; Wang, Hui"
+        journal: "Qiushi Journal"
+        note: "In Chinese"
+        link: "https://doi.org/10.19667/j.cnki.cn23-1070/c.2025.02.007"
 
-- title: An Sample Paper on Image Processing
-  publishedIn:
-    name: 2020 IEEE Region Symposium (TENSYMP)
-    date: 7 June 2020
-    url: https://example.com
-  authors:
-  - name: Dr. Madman
-    url: https://example.com
-  - name: Dr. Lessmad
-    url: https://example.com
-  - name: Dr. Moremad
-    url: https://example.com
-  - name: Dr. Goodman
-    url: https://example.com
-  paper:
-    summary: Ullamco magna minim cupidatat Lorem ea ex aliqua fugiat et. Dolor quis cillum ea duis irure et commodo aliquip consectetur ullamco labore ut anim nisi. Commodo reprehenderit est consectetur tempor adipisicing occaecat exercitation amet do aliquip dolor do irure. Labore officia ut magna pariatur reprehenderit et ex sit sunt. Magna proident ullamco adipisicing sit.
-    url: https://example.com
-  categories: ["image-processing"]
-  tags: ["Image Processing", "Computer Vision"]
+      - title: "How Does Energy Supply Affect Regional Entrepreneurship? Evidence from the West-to-East Natural Gas Transmission Project in China"
+        authors: "Qiu, Lei; Wang, Hongyan; Kuai, Wenjing; Wang, Hui; Lin, Weifen"
+        journal: "Applied Economics"
+        link: "https://doi.org/10.1080/00036846.2025.2467285"
 
-- title: An Example Paper on Security
-  publishedIn:
-    name: 2020 IEEE Region Symposium (TENSYMP)
-    date: 7 June 2020
-    url: https://example.com
-  authors:
-  - name: Dr. Madman
-    url: https://example.com
-  - name: Dr. Lessmad
-    url: https://example.com
-  - name: Dr. Moremad
-    url: https://example.com
-  - name: Dr. Goodman
-    url: https://example.com
-  paper:
-    summary: Dolor ad cupidatat pariatur nulla ipsum ex ullamco nisi anim ullamco. Dolore elit esse in exercitation minim aliqua. Amet velit incididunt magna laboris. Proident reprehenderit deserunt ad officia duis dolor. Tempor nostrud ullamco ullamco sint deserunt cupidatat irure minim consectetur nulla adipisicing sunt.
-    url: https://example.com
-  categories: ["security"]
-  tags: ["Machine Learning", "Autonomous Driving", "Machine Vision"]
+  # ------------- 2024 -------------
+  - year: 2024
+    papers:
+      - title: "Eco-innovation and (Green) Employment: A Task-based Approach to Measuring the Composition of Work in Firms"
+        authors: "Elliott, J.R. Robert; Kuai, Wenjing; Maddison, David; Ozgen, Ceren"
+        journal: "Journal of Environmental Economics and Management"
+        link: "https://doi.org/10.1016/j.jeem.2024.103015"
+
+     
+    reports:
+      - title: "Documenting the Evolution of Green Employment: A Task-Based Approach for the Netherlands"
+        authors: "Elliott, J.R. Robert; Ozgen, Ceren; Kuai, Wenjing"
+        publisher: "Publications Office of the European Union"
+        link: "https://data.europa.eu/doi/10.2767/83152"

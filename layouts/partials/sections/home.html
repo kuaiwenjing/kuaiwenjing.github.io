@@ -1,0 +1,66 @@
+﻿{{/*  layouts/partials/sections/home.html  —— 静态简介版  */}}
+
+{{/* ---------- 获取作者 & 语言数据 ---------- */}}
+{{ $author := site.Data.author }}
+{{ with (index site.Data site.Language.Lang).author }}
+  {{ $author = . }}
+{{ end }}
+
+{{ $name := cond $author.nickname $author.nickname $author.name }}
+
+{{/* ---------- 背景与头像 ---------- */}}
+{{ $background     := site.Params.background     | default "/images/default-background.jpg" }}
+{{ $darkBackground := site.Params.darkBackground | default $background }}
+
+{{ $bg     := resources.Get $background }}
+{{ $bgDark := resources.Get $darkBackground }}
+
+{{ $avatar := resources.Get ($author.image | default "/images/default-avatar.png") }}
+{{ if and $avatar (not (in (slice "svg" "gif") $avatar.MediaType.SubType)) }}
+  {{ $avatar = $avatar.Fit "148x148" }}
+{{ end }}
+
+{{/* ---------- 页面 ---------- */}}
+<div class="container-fluid home" id="home">
+  <style>
+    #homePageBackgroundImageDivStyled   {background-image:url('{{ $bg.RelPermalink }}')}
+    html[data-theme='dark'] #homePageBackgroundImageDivStyled{background-image:url('{{ $bgDark.RelPermalink }}')}
+  </style>
+
+  <div id="homePageBackgroundImageDivStyled" class="background container-fluid"></div>
+
+  <div class="container content text-center">
+    <img src="{{ $avatar.RelPermalink }}" class="rounded-circle mx-auto d-block img-fluid" alt="Author Image" />
+
+    <h1 class="greeting">{{ $author.greeting }} {{ $name }}</h1>
+    {{ with $author.subtitle }}
+      <h2 class="greeting-subtitle">{{ . }}</h2>
+    {{ end }}
+
+   {{/* ---------- 静态简介（分行、白色、下移） ---------- */}}
+{{ if $author.summary }}
+  <div class="intro-lines mt-3" style="margin-top:48px">
+    {{- if (reflect.IsSlice $author.summary) -}}
+      {{ range $author.summary }}
+        <p class="lead text-white fw-normal my-1">{{ . }}</p>
+      {{ end }}
+    {{- else -}}
+      <p class="lead text-white fw-normal my-1">{{ $author.summary }}</p>
+    {{- end -}}
+  </div>
+{{ end }}
+
+
+    {{/* ---------- 向下箭头：跳到第一个启用 Section ---------- */}}
+    {{ $sections := site.Data.sections }}
+    {{ with (index site.Data site.Language.Lang).sections }}
+      {{ $sections = . }}
+    {{ end }}
+    {{ range first 1 (where (sort $sections "section.weight") ".section.enable" true) }}
+      {{ $sectionID := .section.id | default (replace (lower .section.name) " " "-") }}
+      <a href="#{{ $sectionID }}" class="arrow-center" aria-label="Read more">
+        <i class="arrow bounce fa fa-chevron-down"></i>
+      </a>
+    {{ end }}
+  </div>
+</div>
