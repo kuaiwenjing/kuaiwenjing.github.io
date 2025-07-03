@@ -7,6 +7,7 @@ image: "images/author/avatar.png"        # 把头像放 static/images/author/ava
 # ---------------- 联系方式（页脚显示） ----------------
 contactInfo:
   email: kuaiwj@hnu.edu.cn
+  email: wxk617@alumni.bham.ac.uk
   github: kuaiwenjing
   google-scholar:
     icon: google
