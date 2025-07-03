@@ -7,14 +7,12 @@ image: "images/author/avatar.png"        # 把头像放 static/images/author/ava
 # ---------------- 联系方式（页脚显示） ----------------
 contactInfo:
   email: kuaiwj@hnu.edu.cn
-  email: wxk617@alumni.bham.ac.uk
-  github: kuaiwenjing
-  google-scholar:
-    icon: google
-    url: https://scholar.google.com/citations?user=JMfkDnAAAAAJ
-    text: Scholar
-  # 若想加电话或地址，可继续补：
-  # phone: "+86 138-0000-0000"
+  email2: wxk617@alumni.bham.ac.uk
+ #google-scholar:
+   #icon: google
+   #url: https://scholar.google.com/citations?user=JMfkDnAAAAAJ
+   #text: Scholar
+ 
 
 # ---------------- 个人简介摘要 ----------------
 # ---------------- 个人简介摘要（改成单行字符串） ----------------

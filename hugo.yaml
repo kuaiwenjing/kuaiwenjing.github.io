@@ -92,9 +92,3 @@ params:
     newsletter: {enable: false}
     disclaimer: {enable: true}
 
-  # 加载自定义覆盖样式
-  customCSS:
-    - "css/override.css"
-
-  customJS:
-    - "js/disable-typed.js"
