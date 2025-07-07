@@ -17,7 +17,7 @@
 
 {{ $avatar := resources.Get ($author.image | default "/images/default-avatar.png") }}
 {{ if and $avatar (not (in (slice "svg" "gif") $avatar.MediaType.SubType)) }}
-  {{ $avatar = $avatar.Fit "148x148" }}
+  {{ $avatar = $avatar.Fit "960x960 q90" }}
 {{ end }}
 
 {{/* ---------- 页面 ---------- */}}
@@ -37,18 +37,21 @@
       <h2 class="greeting-subtitle">{{ . }}</h2>
     {{ end }}
 
-   {{/* ---------- 静态简介（分行、白色、下移） ---------- */}}
-{{ if $author.summary }}
-  <div class="intro-lines mt-3" style="margin-top:48px">
-    {{- if (reflect.IsSlice $author.summary) -}}
-      {{ range $author.summary }}
-        <p class="lead text-white fw-normal my-1">{{ . }}</p>
-      {{ end }}
-    {{- else -}}
-      <p class="lead text-white fw-normal my-1">{{ $author.summary }}</p>
-    {{- end -}}
+{{/* ---------- 静态简介（Times New Roman + 左对齐圆点） ---------- */}}
+{{- if $author.summary }}
+  <div class="text-start" style="margin-left:200px;">               {{/* 这行负责把父级居中覆盖为左对齐 */}}
+    <ul class="intro-lines mt-5" style="margin-top:36px;">
+      {{- if reflect.IsSlice $author.summary }}
+        {{- range $author.summary }}
+          <li class="lead text-white fw-normal my-1">{{ . }}</li>
+        {{- end }}
+      {{- else }}
+        <li class="lead text-white fw-normal my-1">{{ $author.summary }}</li>
+      {{- end }}
+    </ul>
   </div>
-{{ end }}
+{{- end }}
+
 
 
     {{/* ---------- 向下箭头：跳到第一个启用 Section ---------- */}}
