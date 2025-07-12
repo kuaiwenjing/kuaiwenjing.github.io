@@ -25,6 +25,27 @@
   <style>
     #homePageBackgroundImageDivStyled   {background-image:url('{{ $bg.RelPermalink }}')}
     html[data-theme='dark'] #homePageBackgroundImageDivStyled{background-image:url('{{ $bgDark.RelPermalink }}')}
+    /* 姓名层级 */
+  .greet-small{font-size:1.25rem;font-weight:400;letter-spacing:.02em;}
+  .greet-main {font-size:3rem;font-weight:700;line-height:1.1;}
+  .greet-cn   {font-size:2.6rem;font-weight:300;opacity:.8;line-height:1.1;}
+
+  /* 头像描边 */
+  #home img.rounded-circle{filter:drop-shadow(0 4px 8px rgba(0,0,0,.4));}
+
+  /* 背景蒙版，提升文字对比度 */
+  #homePageBackgroundImageDivStyled{position:relative;}
+  #homePageBackgroundImageDivStyled::after{
+    content:'';position:absolute;inset:0;
+    background:rgba(0,0,0,.40);   /* 0 = 全透明，1 = 全黑；自己微调 */
+  }
+
+  /* 简介列表居中＆自定义圆点 */
+  .intro-lines{max-width:900px;margin:2.5rem auto 0;padding-left:0;}
+  .intro-lines li{
+    list-style:none;margin:.4rem 0;padding-left:1.2em;position:relative;
+  }
+  .intro-lines li::before{content:'•';position:absolute;left:0;color:#fff;}
   </style>
 
   <div id="homePageBackgroundImageDivStyled" class="background container-fluid"></div>
@@ -32,7 +53,7 @@
   <div class="container content text-center">
     <img src="{{ $avatar.RelPermalink }}" class="rounded-circle mx-auto d-block img-fluid" alt="Author Image" />
 
-    <h1 class="greeting">{{ $author.greeting }} {{ $name }}</h1>
+    <h1 class="greeting">{{ $author.greeting }} {{ $name | safeHTML }}</h1>
     {{ with $author.subtitle }}
       <h2 class="greeting-subtitle">{{ . }}</h2>
     {{ end }}
@@ -40,7 +61,7 @@
 {{/* ---------- 静态简介（Times New Roman + 左对齐圆点） ---------- */}}
 {{- if $author.summary }}
   <div class="text-start" style="margin-left:200px;">               {{/* 这行负责把父级居中覆盖为左对齐 */}}
-    <ul class="intro-lines mt-5" style="margin-top:36px;">
+    <ul class="intro-lines mt-3" style="margin-top:36px;">
       {{- if reflect.IsSlice $author.summary }}
         {{- range $author.summary }}
           <li class="lead text-white fw-normal my-1">{{ . }}</li>

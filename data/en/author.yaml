@@ -1,6 +1,6 @@
 # ---------------- 基本信息 ----------------
 name: "Wenjing Kuai"
-nickname: "Vicky; Wenjing Kuai"
+nickname: "Vicky<br/><span style='opacity:.72;'>Wenjing&nbsp;Kuai</span>"
 greeting: "Hi, I'm"
 image: "images/author/avatar.png"        # 把头像放 static/images/author/avatar.png
 

@@ -11,7 +11,7 @@
               <strong>{{ .title }}</strong><br>
               <em>{{ .authors }}</em>, <span>{{ .journal }}</span>
               {{ if .note }}(<span>{{ .note }}</span>){{ end }}
-              {{ if .link }} – <a href="{{ .link }}" class="text-blue-600">查看</a>{{ end }}
+              {{ if .link }} – <a href="{{ .link }}" class="text-blue-600">View</a>{{ end }}
             </li>
           {{ end }}
         </ul>
@@ -22,7 +22,7 @@
               <li>
                 <strong>{{ .title }}</strong><br>
                 <em>{{ .authors }}</em>, <span>{{ .publisher }}</span>
-                {{ if .link }} – <a href="{{ .link }}" class="text-blue-600">查看</a>{{ end }}
+                {{ if .link }} – <a href="{{ .link }}" class="text-blue-600">View</a>{{ end }}
               </li>
             {{ end }}
           </ul>
