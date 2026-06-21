@@ -1,0 +1,49 @@
+section:
+  name: Publications
+  id: publications
+  enable: true
+  weight: 2          # About=1, Publications=2
+  showOnNavbar: true
+
+publications:
+  - year: 2026
+    papers:
+      - title: "New brooms sweep cleaner? Political term and air pollution governance"
+        authors: "Wang, L., Zhang, L., Kuai, W.*, and Qu, D."
+        journal: "Public Choice"
+        note: "Advance online publication"
+        link: "https://doi.org/10.1007/s11127-026-01431-4"
+
+      - title: "How does energy supply affect regional entrepreneurship? Evidence from the West-to-East Natural Gas Transmission Project in China"
+        authors: "Qiu, L., Wang, H., Kuai, W., Wang, H., and Lin, W."
+        journal: "Applied Economics"
+        note: "58(8), 1484–1503"
+        link: "https://doi.org/10.1080/00036846.2025.2467285"
+
+  - year: 2025
+    papers:
+      - title: "Research on green employment: Definition, measurement, and development"
+        authors: "Kuai, W., Mi, Y., and Wang, H."
+        journal: "Qiushi Journal"
+        note: "2025(2). In Chinese"
+        link: "https://doi.org/10.19667/j.cnki.cn23-1070/c.2025.02.007"
+
+  - year: 2024
+    papers:
+      - title: "Eco-innovation and (green) employment: A task-based approach to measuring the composition of work in firms"
+        authors: "Elliott, R. J. R., Kuai, W.*, Maddison, D., and Ozgen, C."
+        journal: "Journal of Environmental Economics and Management"
+        note: "127, 103015"
+        link: "https://doi.org/10.1016/j.jeem.2024.103015"
+
+      - title: "The impact of environmental regulation on green trade and its spatial spillover effect"
+        authors: "Li, J., Dong, K., and Kuai, W."
+        journal: "Journal of Lanzhou University (Social Sciences)"
+        note: "52(6), 76–91. In Chinese"
+        link: "https://doi.org/10.13885/j.issn.1000-2804.2024.06.005"
+
+    reports:
+      - title: "Documenting the Evolution of Green Employment: A Task-Based Approach for the Netherlands"
+        authors: "Elliott, R. J. R., Ozgen, C., and Kuai, W."
+        publisher: "Luxembourg: Publications Office of the European Union"
+        link: "https://data.europa.eu/doi/10.2767/83152"

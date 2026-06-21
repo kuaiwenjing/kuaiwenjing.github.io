@@ -1,0 +1,45 @@
+name: deploy-to-gh-pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ① 拉取源码
+      - uses: actions/checkout@v4
+
+      # ② 安装最新 Hugo extended（0.147.0+）
+      - uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.147.0'
+          extended: true
+
+      # ③ 安装 Node —— Toha v4 需 PostCSS
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # ④ 下载 Go / npm 依赖
+      - name: Prepare modules & node deps
+        run: |
+          hugo mod tidy            # 拉取 Hugo Modules
+          hugo mod npm pack        # 生成 package.hugo.json
+          npm ci                   # 安装前端依赖
+
+      # ⑤ 生成静态站点
+      - name: Build site
+        run: hugo --minify
+
+      # ⑥ 发布到 gh-pages 分支
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          keep_files: true

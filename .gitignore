@@ -1,0 +1,6 @@
+resources/*
+node_modules/*
+public/*
+
+# 本地操作笔记/规则(含账号等敏感信息),仅本地保留,绝不提交到公开仓库
+/CLAUDE.md

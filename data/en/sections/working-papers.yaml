@@ -1,0 +1,17 @@
+section:
+  name: Working Papers
+  id: working-papers
+  enable: true
+  weight: 3          # 调整顺序用
+  showOnNavbar: true
+
+papers:
+  - title: "International engagement and the greenness of manufacturing firms"
+    authors: "Elliott, R. J. R., Kuai, W., Okubo, T., and Ozgen, C."
+    status: "RIETI Discussion Paper No. 26-E-018"
+    link: "https://www.rieti.go.jp/jp/publications/dp/26e018.pdf"
+
+  - title: "Estimating the green wage premium"
+    authors: "Kuai, W., Elliott, R. J. R., Okubo, T., and Ozgen, C."
+    status: "IZA Discussion Paper No. 17878"
+    link: "https://docs.iza.org/dp17878.pdf"

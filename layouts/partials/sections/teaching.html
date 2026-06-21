@@ -1,0 +1,14 @@
+{{- $section := .section -}}
+<section id="{{ $section.id }}" class="py-12 bg-gray-50">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-semibold mb-6">{{ $section.name }}</h2>
+    <ul class="list-disc ml-6">
+      {{ range .courses }}
+        <li>
+          <strong>{{ .title }}</strong> – <span>{{ .semester }}</span>
+          {{ if .link }} (<a href="{{ .link }}" class="text-blue-600">详情</a>){{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>

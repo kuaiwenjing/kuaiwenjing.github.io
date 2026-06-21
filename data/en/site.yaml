@@ -1,0 +1,34 @@
+# ---------------- 基本信息 ----------------
+copyright: © 2026 Wenjing Kuai
+
+# Meta description – 有助于 SEO
+description: >
+  Associate Professor of Economics at Hunan University.
+  Research focuses on environmental, labour and innovation economics, with an emphasis
+  on green jobs and skills.
+
+# 顶栏与页签上显示的站点名（默认用 title；这里单独给可自行调整）
+navBarTitle: "Wenjing Kuai"
+
+# ---------------- 自定义菜单（顶栏右侧） ----------------
+customMenus:
+  - name: Google Scholar
+    url: https://scholar.google.com/citations?user=JMfkDnAAAAAJ
+    hideFromNavbar: false
+    showOnFooter: false
+
+  - name: 中文简介
+    url: https://cet.hnu.edu.cn/info/1150/10967.htm
+    hideFromNavbar: false
+    showOnFooter: false
+# ---------------- OpenGraph 用于社交分享 ----------------
+openGraph:
+  title: Wenjing Kuai
+  type: website
+  description: "Associate Professor of Economics, Hunan University."
+  image: images/author/avatar.png    # 记得放 static/images/author/avatar.png
+  url: https://kuaiwenjing.github.io
+
+# （可选）页脚免责声明——若不需要可删
+disclaimer: >
+  All views expressed are my own and do not represent those of Hunan University.

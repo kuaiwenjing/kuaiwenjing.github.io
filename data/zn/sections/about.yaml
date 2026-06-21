@@ -1,0 +1,14 @@
+section:
+  name: 中文简介
+  id: about-zh
+  enable: true
+  weight: 6          # 放在 CV 之后
+  showOnNavbar: true
+  template: sections/about.html        # 复用同一模板
+
+summary: |
+  **蒯文静**，经济学博士，湖南大学经济与贸易学院副教授。研究领域包括环境经济学、
+  劳动经济学与创新经济学，尤其关注绿色经济转型对劳动力市场的影响以及绿色就业与
+  绿色技能测度。在 *Public Choice*、*Journal of Environmental Economics and Management*、
+  *Applied Economics* 等国内外期刊发表多篇论文，主持国家自然科学基金、湖南省自然科学基金
+  等多项科研项目，曾获湖南大学本科优秀毕业论文指导教师、优秀实习指导教师等荣誉。

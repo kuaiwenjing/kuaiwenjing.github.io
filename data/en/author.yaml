@@ -1,0 +1,22 @@
+# ---------------- 基本信息 ----------------
+name: "Wenjing Kuai"
+nickname: "Vicky<br/><span style='opacity:.72;'>Wenjing&nbsp;Kuai</span>"
+greeting: "Hi, I'm"
+image: "images/author/avatar.png"        # 把头像放 static/images/author/avatar.png
+
+# ---------------- 联系方式（页脚显示） ----------------
+contactInfo:
+  email: kuaiwj@hnu.edu.cn
+  email2: wxk617@alumni.bham.ac.uk
+ #google-scholar:
+   #icon: google
+   #url: https://scholar.google.com/citations?user=JMfkDnAAAAAJ
+   #text: Scholar
+ 
+
+# ---------------- 个人简介摘要 ----------------
+# ---------------- 个人简介摘要（改成单行字符串） ----------------
+summary:
+  - "Associate Professor, School of Economics & Trade, Hunan University"
+  - "PhD in Economics, University of Birmingham"
+  - "Research: environmental, labour & innovation economics; green jobs and skills"

@@ -1,0 +1,21 @@
+{{/* ------------ CV Section (simple link list) ------------- */}}
+{{ $cv := (index (index site.Data site.Language.Lang).sections "cv") }}
+{{ if and $cv $cv.section.enable }}
+
+<section id="{{ $cv.section.id | default "cv" }}" class="py-12 {{ if modBool $cv.section.weight 2 }}bg-secondary{{ else }}bg-primary{{ end }}">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-6">{{ $cv.section.name }}</h2>
+
+    <ul class="list-none space-y-2">
+      {{ range $cv.resourceLinks }}
+        <li>
+          <a href="{{ .url | relURL }}" class="text-blue-600" target="_blank" rel="noopener">
+            {{ .title }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+
+{{ end }}
